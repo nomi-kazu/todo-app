@@ -1,6 +1,11 @@
 .container
-  = link_to 'sign up', new_user_registration_path
-  %br/
-  = link_to 'sign in', new_user_session_path
-  %br/
-  = link_to 'sign out', destroy_user_session_path, data: { method: 'delete'}
+  %h2 All Boards
+  .card 
+    .card_title
+      %p Brackets
+      = image_tag 'Combined Shape.png'
+    .card_content
+      %p Saving money - is something we would all like.
+    .card_detail
+      = image_tag 'Oval.png'
+  
