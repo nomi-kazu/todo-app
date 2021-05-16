@@ -1,0 +1,12 @@
+.board 
+  .board_title
+    = @board.title
+    .dropdown
+      = image_tag 'Combined Shape.png', class: 'dropbtn'
+      .dropdown-content
+        = link_to 'Edit', edit_board_path(@board)
+        = link_to 'Delete', board_path(@board), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？'}
+  .board_content
+    = @board.content
+  .board_detail
+    = image_tag 'Oval.png'

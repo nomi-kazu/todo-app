@@ -6,5 +6,5 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Board.create({title: 'new Todo', content: 'hello world'})
-Board.create({title: 'new Todo2', content: 'Hello World'})
+Board.create!({user_id: 2, title: 'new Todo', content: 'hello world'})
+Board.create!({user_id: 2, title: 'new Todo2', content: 'Hello World'})
