@@ -1,11 +1,22 @@
 .container
-  %h2 All Boards
-  .card 
-    .card_title
+  %h2 All Boards  
+  -# - @boards.each do |board|
+  .board 
+    .board_title
       %p Brackets
-      = image_tag 'Combined Shape.png'
-    .card_content
+      .dropdown
+        = image_tag 'Combined Shape.png', class: 'dropbtn'
+        .dropdown-content
+          = link_to 'Edit'
+          = link_to 'Delete'
+    .board_content
       %p Saving money - is something we would all like.
-    .card_detail
+    .board_detail
       = image_tag 'Oval.png'
-  
+
+  .board_add
+    = link_to '+ Add new board', new_board_path
+    
+
+    
+     
