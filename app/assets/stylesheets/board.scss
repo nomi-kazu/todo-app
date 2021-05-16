@@ -1,0 +1,51 @@
+$avatar-size: 32px;
+$container-padding: 16px;
+
+.board {
+  background-color: #F4F4F4;
+  margin: 26px 16px;
+  padding: $container-padding $container-padding;
+  border-radius: 10px;
+
+  h2 {
+    font-size: 26px;
+  }
+
+  &_title {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    margin: 10px;
+    line-height: 25px;
+  }
+
+  &_detail {
+    padding-top: 10px;
+    display: flex;
+    font-size: 12px;
+    position: relative;
+
+    img {
+      width: $avatar-size;
+      height: $avatar-size;
+      border-radius: 100%;
+      margin-right: 16px;
+    }
+  }
+
+  &_content {
+    padding: 24px 0 32px;
+    font-size: 14px;
+    opacity: 0.4;
+  }
+}
+
+.board_add {
+  display: block;
+  background-color: white;
+  margin: 26px 16px;
+  padding: 70px;
+  text-align: center;
+  border: 1px dashed rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
