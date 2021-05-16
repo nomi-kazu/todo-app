@@ -17,8 +17,12 @@ class Board < ApplicationRecord
 	validates :title, presence: true
 	
 	validates :content, presence: true
-	validates :content, length: { mimimum: 2}
+	validates :content, length: { minimum: 2}
 	validates :content, uniqueness: true
 
-	# belongs_to :user
+	belongs_to :user
+
+	def author_name
+		user.display_name
+	end
 end
