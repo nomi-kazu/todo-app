@@ -1,0 +1,15 @@
+.board 
+  .board_title
+    = @task.title
+    - if user_signed_in? && current_user.has_written?(@task)
+      .dropdown
+        = image_tag 'Combined Shape.png', class: 'dropbtn'
+        .dropdown-content
+          = link_to 'Edit', edit_board_task_path(@task)
+          = link_to 'Delete', board_task_path(@task), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？'}
+  .board_content
+    = @task.content
+  .board_detail
+    = image_tag 'Oval.png'
+    %div
+      %p= @task.author_name
