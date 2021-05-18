@@ -1,4 +1,4 @@
-.board 
+.board   
   .board_title
     = @board.title
     - if user_signed_in? && current_user.has_written?(@board)
@@ -13,3 +13,12 @@
     = image_tag 'Oval.png'
     %div
       %p= @board.author_name
+
+.container
+  %h2 All Tasks  
+  - @tasks.each do |task|
+    = render 'commons/task', task: task
+  .board_add
+    = link_to '+ Add new task', new_board_task_path(@board) 
+  
+  
