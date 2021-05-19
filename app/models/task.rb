@@ -12,6 +12,8 @@
 #  user_id    :bigint           not null
 #
 class Task < ApplicationRecord
+	has_one_attached :eyecatch
+	
 	belongs_to :board
 	belongs_to :user
 
