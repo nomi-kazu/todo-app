@@ -8,7 +8,7 @@
 #  title      :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  board_id   :bigint
+#  board_id   :bigint           not null
 #  user_id    :bigint           not null
 #
 require "test_helper"
