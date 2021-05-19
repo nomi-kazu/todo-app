@@ -23,7 +23,18 @@ class TasksController < ApplicationController
 
   def edit
     board = Board.find(params[:board_id])
-    @task = board.tasks.build
+    @task = board.tasks.find(params[:id])
+  end
+
+  def update
+    board = Board.find(params[:board_id])
+    @task = board.tasks.find(params[:id])
+    if @task.update(task_params)
+      redirect_to board_path(board), notice: '更新完了'
+    else
+      flash.now[:error] = '更新できませんでした'
+      render :edit
+    end
   end
 
   def destroy
