@@ -11,7 +11,7 @@ class TasksController < ApplicationController
     board = Board.find(params[:board_id])
     @task = board.tasks.build(task_params)
     if @task.save
-      redirect_to board_path(@board), notice: '保存完了'
+      redirect_to board_path(board), notice: '保存完了'
     else
       flash.now[:error] = '保存失敗'
       render :new
@@ -22,11 +22,13 @@ class TasksController < ApplicationController
   end
 
   def edit
-    @task = current_user.tasks.find(params[:board_id])
+    board = Board.find(params[:board_id])
+    @task = board.tasks.build
   end
 
   def destroy
-    task = current_user.tasks.find(params[:board_id])
+    board = Board.find(params[:board_id])
+    task = board.tasks.find(params[:id])
     task.destroy!
     redirect_to board_path(board), notice: '削除成功'
   end
@@ -37,6 +39,6 @@ class TasksController < ApplicationController
   end
 
   def set_task
-    @task = Task.find(params[:board_id])
+    @task = Task.find(params[:id])
   end
 end
