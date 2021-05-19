@@ -1,4 +1,7 @@
 .board 
+  - if @task.eyecatch.attached?
+    .board_image
+      = image_tag @task.eyecatch
   .board_title
     = @task.title
     - if user_signed_in? && current_user.has_written?(@task)
