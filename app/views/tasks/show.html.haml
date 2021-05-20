@@ -16,3 +16,11 @@
     = image_tag 'Oval.png'
     %div
       %p= @task.author_name
+.container
+  %h2 All Comments 
+  .board
+    - @comments.each do |comment|
+      .board_comment
+        %p= comment.content
+  .board_add
+    = link_to 'Add New Comment', new_board_task_comment_path(board_id: @task.board_id, task_id: @task.id) 
